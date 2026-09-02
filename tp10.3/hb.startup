@@ -1,0 +1,4 @@
+ip a add 200.3.124.1/26 dev eth0
+ip route add default via 200.3.124.60
+
+cat /shared/hosts.txt >> /etc/hosts

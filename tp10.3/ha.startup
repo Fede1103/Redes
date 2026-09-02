@@ -1,0 +1,7 @@
+ip a add 170.16.128.1/17 dev eth0
+ip link set eth0 mtu 1200
+ip link set dev eth0 up
+
+ip route add default via 170.16.255.252
+
+cat /shared/hosts.txt >> /etc/hosts

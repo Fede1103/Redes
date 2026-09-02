@@ -1,0 +1,24 @@
+
+ip a add 200.3.124.60/26 dev eth0
+ip link set dev eth0 mtu 1500
+ip link set dev eth0 up
+
+ip a add 192.168.50.130/30 dev eth1
+ip link set dev eth1 mtu 1000
+ip link set dev eth1 up
+
+ip a add 192.168.50.134/30 dev eth2
+ip link set dev eth2 mtu 1500
+ip link set dev eth2 up
+
+ip a add 192.168.50.145/30 dev eth3
+ip link set dev eth3 mtu 620
+ip link set dev eth3 up
+
+ip route add 129.30.192.64/26 via 192.168.50.146 dev eth3
+ip route add 170.16.128.0/17 via 192.168.50.129 dev eth1
+ip route add 11.11.0.0/20 via 192.168.50.133 dev eth2
+
+ip route add default via 192.168.50.133 dev eth2
+
+cat /shared/hosts.txt >> /etc/hosts

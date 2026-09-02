@@ -1,0 +1,12 @@
+ip a add 11.11.15.252/20 dev eth0
+ip a add 192.168.50.141/30 dev eth1
+ip a add 192.168.50.137/30 dev eth2
+ip a add 192.168.50.149/30 dev eth3
+
+ip route add 200.3.124.0/26 via 192.168.50.138 dev eth2
+ip route add 170.16.128.0/17 via 192.168.50.142 dev eth1
+ip route add 129.30.192.64/26 via 192.168.50.150 dev eth3
+
+ip route add default via 192.168.50.138 dev eth2
+
+cat /shared/hosts.txt >> /etc/hosts
