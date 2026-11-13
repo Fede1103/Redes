@@ -1,4 +1,0 @@
-ip a add 11.11.0.1/20 dev eth0
-ip route add default via 11.11.15.252
-
-cat /shared/hosts.txt >> /etc/hosts
