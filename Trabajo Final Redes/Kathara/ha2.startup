@@ -1,0 +1,9 @@
+# HA2 - LA (192.168.100.0/29) - 2@0 - HTTP
+ip a add 192.168.100.2/29 dev eth0
+ip link set dev eth0 up
+ip route add default via 192.168.100.6
+
+cp /shared/resolv.conf /etc/resolv.conf
+
+# Servidor HTTP (formulario de login con GET y POST) en el puerto 80
+nohup python3 /root/server.py > /var/log/server.log 2>&1 &

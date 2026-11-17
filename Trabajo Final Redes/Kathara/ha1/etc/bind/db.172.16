@@ -1,0 +1,25 @@
+$TTL    604800
+@       IN      SOA     ha1.petas.izo. root.petas.izo. (
+                        2026111601  ; Serial
+                        604800      ; Refresh
+                        86400       ; Retry
+                        2419200     ; Expire
+                        604800 )    ; Negative Cache TTL
+;
+@       IN      NS      ha1.petas.izo.
+
+; Resolucion inversa de 172.16.x
+1.0       IN      PTR     hf1.petas.izo.
+1.2       IN      PTR     hg1.petas.izo.
+1.3       IN      PTR     hl1.petas.izo.
+1.4       IN      PTR     hm1.petas.izo.
+1.5       IN      PTR     hn1.petas.izo.
+1.6       IN      PTR     ho1.petas.izo.
+1.7       IN      PTR     hp1.petas.izo.
+254.1     IN      PTR     rf0.petas.izo.
+254.2     IN      PTR     rg0.petas.izo.
+254.3     IN      PTR     rl0.petas.izo.
+254.4     IN      PTR     rm0.petas.izo.
+254.5     IN      PTR     rn0.petas.izo.
+254.6     IN      PTR     ro0.petas.izo.
+254.7     IN      PTR     rp0.petas.izo.

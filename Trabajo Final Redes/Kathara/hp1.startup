@@ -1,0 +1,6 @@
+# HP1 - LP (172.16.7.0/24) - 1@0
+ip a add 172.16.7.1/24 dev eth0
+ip link set dev eth0 up
+ip route add default via 172.16.7.254
+
+cp /shared/resolv.conf /etc/resolv.conf

@@ -1,0 +1,13 @@
+ulimit -n 1024
+
+# eth0 - LF (172.16.0.0/23) - 1.254@0
+ip a add 172.16.1.254/23 dev eth0
+ip link set dev eth0 up
+
+# eth1 - EBC_F hacia RBC (192.168.200.8/30) - 10@1
+ip a add 192.168.200.10/30 dev eth1
+ip link set dev eth1 up
+
+cp /shared/resolv.conf /etc/resolv.conf
+
+/etc/init.d/quagga start

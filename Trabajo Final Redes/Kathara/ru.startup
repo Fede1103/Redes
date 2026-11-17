@@ -1,0 +1,17 @@
+ulimit -n 1024
+
+# eth0 - LU (192.168.90.0/24) - 254@0
+ip a add 192.168.90.254/24 dev eth0
+ip link set dev eth0 up
+
+# eth1 - ET_U hacia RT (192.168.200.80/30) - 82@1
+ip a add 192.168.200.82/30 dev eth1
+ip link set dev eth1 up
+
+# eth2 - EU_V hacia RV (192.168.200.84/30) - 85@2
+ip a add 192.168.200.85/30 dev eth2
+ip link set dev eth2 up
+
+cp /shared/resolv.conf /etc/resolv.conf
+
+/etc/init.d/quagga start

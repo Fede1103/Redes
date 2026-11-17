@@ -1,0 +1,20 @@
+ulimit -n 1024
+
+# eth0 - LR (192.168.40.0/28) - 14@0
+ip a add 192.168.40.14/28 dev eth0
+ip link set dev eth0 up
+
+# eth1 - EM_R hacia RM (192.168.200.56/30) - 58@1
+ip a add 192.168.200.58/30 dev eth1
+ip link set dev eth1 up
+
+cp /shared/resolv.conf /etc/resolv.conf
+
+/etc/init.d/quagga start
+
+# Servidor DHCP de la LAN LR (dnsmasq).
+chmod +x /usr/sbin/dnsmasq
+ldconfig
+mkdir -p /var/lib/misc
+touch /var/lib/misc/dnsmasq.leases
+dnsmasq -C /etc/dnsmasq.conf

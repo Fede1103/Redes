@@ -1,0 +1,3 @@
+# HR1 - LR - IP fija por DHCP (reserva de la MAC 02:00:00:00:40:01)
+ip link set dev eth0 up
+dhclient eth0

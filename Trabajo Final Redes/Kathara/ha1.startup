@@ -1,0 +1,13 @@
+# HA1 - LA (192.168.100.0/29) - 1@0 - DNS
+ip a add 192.168.100.1/29 dev eth0
+ip link set dev eth0 up
+ip route add default via 192.168.100.6
+
+mkdir -p /var/cache/bind /var/run/named
+chown -R bind:bind /var/cache/bind /etc/bind /var/run/named
+chmod 775 /var/cache/bind /var/run/named
+
+echo "nameserver 127.0.0.1" > /etc/resolv.conf
+echo "search petas.izo" >> /etc/resolv.conf
+
+/etc/init.d/named start

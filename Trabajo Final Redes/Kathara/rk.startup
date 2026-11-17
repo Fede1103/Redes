@@ -1,0 +1,25 @@
+ulimit -n 1024
+
+# eth0 - LK (192.168.60.0/24) - 254@0
+ip a add 192.168.60.254/24 dev eth0
+ip link set dev eth0 up
+
+# eth1 - EBC_K hacia RBC (192.168.200.16/30) - 18@1
+ip a add 192.168.200.18/30 dev eth1
+ip link set dev eth1 up
+
+# eth2 - EDE_K hacia RDE (192.168.200.24/30) - 26@2
+ip a add 192.168.200.26/30 dev eth2
+ip link set dev eth2 up
+
+# eth3 - EK_N hacia RN (192.168.200.44/30) - 45@3
+ip a add 192.168.200.45/30 dev eth3
+ip link set dev eth3 up
+
+# eth4 - EK_O hacia RO (192.168.200.48/30) - 49@4
+ip a add 192.168.200.49/30 dev eth4
+ip link set dev eth4 up
+
+cp /shared/resolv.conf /etc/resolv.conf
+
+/etc/init.d/quagga start

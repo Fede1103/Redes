@@ -1,0 +1,3 @@
+# HR3 - LR - IP dinamica por DHCP
+ip link set dev eth0 up
+dhclient eth0

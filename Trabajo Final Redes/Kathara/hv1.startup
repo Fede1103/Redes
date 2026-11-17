@@ -1,0 +1,6 @@
+# HV1 - LV (192.168.110.0/24) - 1@0
+ip a add 192.168.110.1/24 dev eth0
+ip link set dev eth0 up
+ip route add default via 192.168.110.254
+
+cp /shared/resolv.conf /etc/resolv.conf
